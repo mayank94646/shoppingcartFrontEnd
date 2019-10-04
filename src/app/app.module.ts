@@ -8,6 +8,10 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { UserCartComponent } from './user-cart/user-cart.component';
+import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
+import {ProductsService} from './products.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,13 +20,16 @@ import { UserCartComponent } from './user-cart/user-cart.component';
     NavBarComponent,
     ProductDetailsComponent,
     ProductListComponent,
-    UserCartComponent
+    UserCartComponent,
+    SignupComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
