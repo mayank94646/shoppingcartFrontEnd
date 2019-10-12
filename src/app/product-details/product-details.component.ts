@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
+import {ProductsService} from '../products.service';
 
 @Component({
   selector: 'app-product-details',
@@ -7,25 +8,24 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent implements OnInit {
-   userId;
-   info = [
-     {
-       name : 'Hrx shoes',
-       price : '2000',
-       type : 'Sneakers',
-       details: 'Special Technologies: \n' +
-         'High quality synthetic PU upper \n' +
-         ' Cushion collar provides ankle support. \n' +
-         ' Soft EVA/ latex on the bottom of the insole that gives extra cushioning to the hee',
-       imgsrc : '../../assets/images/gshoe1.jpg',
-     }
-   ];
-  constructor(private activatedRoute: ActivatedRoute) { }
+  private productId;
+  private products = [];
+  private product;
+  constructor(private route: ActivatedRoute, private router: Router, private productService: ProductsService) { }
 
   ngOnInit() {
-    this.activatedRoute.queryParams.subscribe(params => {
-      this.userId = params.id;
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      // tslint:disable-next-line:radix
+      const id = parseInt(params.get('id'));
+      this.productId = id;
     });
+
+    this.productService.getOneProduct(this.productId).subscribe(data => this.product = data);
   }
 
+  /*addThisProductToCart(id) {
+    this.cartService.addToCart(id).subscribe((data) =>
+      console.log(data));
+    alert('Product added to cart.');
+  }*/
 }

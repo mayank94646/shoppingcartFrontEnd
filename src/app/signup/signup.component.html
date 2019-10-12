@@ -8,41 +8,41 @@
               <h1 class="text-center">Sign up</h1>
               <div class="form-group">
                 <label for="username" >Name:</label><br>
-                <input type="text" name="username" id="username" class="form-control">
+                <input type="text" name="username" id="username" class="form-control" [(ngModel)]="user.name">
               </div>
               <div class="form-group">
                 <label for="mail" >Email:</label><br>
-                <input type="text" name="mail" id="mail" class="form-control">
+                <input type="text" name="mail" id="mail" class="form-control" [(ngModel)]="user.email">
               </div>
               <div class="form-group">
                 <label for="number">Contact Number:</label><br>
-                <input type="text" name="number" id="number" class="form-control">
+                <input type="text" name="number" id="number" class="form-control" [(ngModel)]="user.mobileNo">
               </div>
               <div class="form-group">
                 <label for="password">Password:</label><br>
-                <input type="password" name="password" id="password" class="form-control">
+                <input type="password" name="password" id="password" class="form-control" [(ngModel)]="user.password">
               </div>
               <div>Gender:</div>
               <div class="form-group">
                 <div class="form-check">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="gender">Male
+                    <input type="radio" class="form-check-input" name="gender" value="Male" [(ngModel)]="user.gender">Male
                   </label>
                 </div>
                 <div class="form-check">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="gender">Female
+                    <input type="radio" class="form-check-input" name="gender" value="Female" [(ngModel)]="user.gender">Female
                   </label>
                 </div>
                 <div class="form-check">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="gender">Others
+                    <input type="radio" class="form-check-input" name="gender" value="Others" [(ngModel)]="user.gender">Others
                   </label>
                 </div>
               </div>
               <div class="form-group">
                 <br>
-                <input type="submit" name="submit" class="btn border-white text-white" value="Register">
+                <input type="submit" name="submit" class="btn border-white text-white" value="Register" (click)="createUser()">
               </div>
             </form>
           </div>

@@ -12,6 +12,8 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import {ProductsService} from './products.service';
 import {HttpClientModule} from '@angular/common/http';
+import { LogoutComponent } from './logout/logout.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,11 +25,13 @@ import {HttpClientModule} from '@angular/common/http';
     UserCartComponent,
     SignupComponent,
     LoginComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ProductsService],
   bootstrap: [AppComponent]

@@ -19,16 +19,15 @@
     <li class="nav-item pl-4">
       <h3><a class="nav-link" routerLink="/products/clothing">Clothing</a></h3>
     </li>
-
-
   </ul>
   </div>
-<div class="p-0 m-0">
-    <a class="nav-link" href="user_cart"><h3 class="text-danger">My Cart</h3></a>
+<div class="p-0 m-0 d-flex justify-content-center">
+    <h3 *ngIf="!loginService.isUserLoggedIn()"><a class="nav-link text-white" routerLink="/login">Login</a></h3>
+
+    <h3 *ngIf="loginService.isUserLoggedIn()"><a class="nav-link text-white" routerLink="/logout">Logout</a></h3>
+
+  <a class="nav-link" href="cart"><h3 class="text-white">My Cart</h3></a>
 </div>
 
 </nav>
 
-<div class="text-right my1">
-  <p><a href="login" class="my2">Logout</a></p>
-</div>

@@ -21,10 +21,12 @@
       </div>
     </div>
     <div class="col-sm-9 d-flex flex-wrap">
-      <div *ngFor="let s of products" class="mayank1">
+      <div *ngFor="let s of products" class="mayank1" (click)="seeDetails(s)">
 
         <img src="{{s.image}}" class="mayank2 img-rounded">
         <h3>{{s.name}}</h3>
+        <h4><pre>Price : {{s.price}}</pre></h4>
+        <button class="btn-dark">Add to cart</button>
         <!--<p>{{s.price}}</p>-->
 
       </div>
