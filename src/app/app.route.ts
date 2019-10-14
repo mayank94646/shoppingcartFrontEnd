@@ -8,6 +8,7 @@ import {SignupComponent} from './signup/signup.component';
 import {ProductListComponent} from './product-list/product-list.component';
 import {LogoutComponent} from './logout/logout.component';
 import {AuthguardService} from './authguard.service';
+import {OrderHistoryComponent} from './order-history/order-history.component';
 
 
 export const MAIN_ROUTES: Routes = [
@@ -15,9 +16,11 @@ export const MAIN_ROUTES: Routes = [
   { path : 'home', component: HomePageComponent },
   { path : 'sign_up', component: SignupComponent },
   { path : 'login', component: LoginComponent },
+  { path : 'orderHistory', component: OrderHistoryComponent },
   { path : 'logout', component: LogoutComponent, canActivate: [AuthguardService]},
   { path : 'cart', component: UserCartComponent, canActivate: [AuthguardService]},
   { path : 'products/:category', component: ProductListComponent },
   { path : 'product-detail/:id', component: ProductDetailsComponent },
   { path : 'products/:category/price1/price2', component: ProductListComponent },
+  { path : '**', component: HomePageComponent }
 ];

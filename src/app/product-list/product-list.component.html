@@ -5,28 +5,31 @@
       <div class="pt-5"> <h1>Price</h1></div>
       <div class="text-left p-3 ml-5">
         <form>
-          <div class="checkbox">
-            <label><input type="checkbox"> 0 - 499</label>
+          <div class="form-check">
+            <label class="form-check-label"><input type="radio" name="abc" class="form-check-input" (click)="filterByPrice(0,499)"> 0 - 499</label>
           </div>
-          <div class="checkbox">
-            <label><input type="checkbox"> 500 - 999</label>
+          <div class="form-check">
+            <label class="form-check-label"><input type="radio" name="abc" class="form-check-input" (click)="filterByPrice(500,999)"> 500 - 999</label>
           </div>
-          <div class="checkbox">
-            <label><input type="checkbox"> 1000 - 3000</label>
+          <div class="form-check">
+            <label class="form-check-label"><input type="radio" name="abc" class="form-check-input" (click)="filterByPrice(1000,3000)"> 1000 - 3000</label>
           </div>
-          <div class="checkbox">
-            <label><input type="checkbox"> 3000 over</label>
+          <div class="form-check">
+            <label class="form-check-label"><input type="radio" name="abc" class="form-check-input" (click)="filterByPrice(3000,100000)"> 3000 over</label>
           </div>
         </form>
       </div>
     </div>
     <div class="col-sm-9 d-flex flex-wrap">
-      <div *ngFor="let s of products" class="mayank1" (click)="seeDetails(s)">
+      <div *ngFor="let s of products" class="mayank1">
 
         <img src="{{s.image}}" class="mayank2 img-rounded">
         <h3>{{s.name}}</h3>
         <h4><pre>Price : {{s.price}}</pre></h4>
-        <button class="btn-dark">Add to cart</button>
+        <div class="d-flex justify-content-between p-1">
+        <button class="btn-dark" (click)="seeDetails(s)">Details</button>
+        <button class="btn-dark" (click)="addThisProductToCart(s)">Add to cart</button>
+        </div>
         <!--<p>{{s.price}}</p>-->
 
       </div>

@@ -1,21 +1,21 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-8 p-5">
-      <div class="d-flex p-3 border border-dark"><!--ngfor-->
+    <div class="col-sm-8 p-5" >
+      <div class="d-flex p-3 border border-dark" *ngFor="let p of prod">
       <div class="col-sm-4 ">
-        <img src="ed" alt="imaeh">
+        <img src="{{p.products.image}}" alt="imaeh" class="jj">
       </div>
       <div class="col-sm-3">
-        <h4>name: asd</h4>
-        <h4>Price:1000</h4>
+        <h5>{{p.products.name}}</h5>
+        <h5>{{p.products.price}}</h5>
       </div>
       <div class="col-sm-3 d-flex justify-content-center">
-        <button class="aa">-</button>
-        <h4>1</h4>
-        <button class="aa">+</button>
+        <button class="aa" (click)="removeOne(p.products.productId)">-</button>
+        <h4>{{p.quantity}}</h4>
+        <button class="aa" (click)="addOne(p.products.productId)">+</button>
       </div>
       <div class="col-sm-2">
-        <button>Delete</button>
+        <button (click)="removeProduct(p.products.productId)">Delete</button>
       </div>
       </div>
     </div>
@@ -23,12 +23,16 @@
       <div class="m-5 p-3 border border-dark">
         <h1>Price Details</h1>
         <hr>
-        <h4>Price : 0</h4>
-        <h4>Delivery : 100 </h4>
+        <h5>{{total}}</h5>
+        <h5>Delivery : 100 </h5>
         <hr>
-        <h4>Total Payable Amount : 100</h4>
+        <h5>Total Payable Amount : {{total+100}}</h5>
         <hr>
         <h5>Fastest delivery with us and apply coupons too!!!</h5>
+        <div class="p-5 d-flex justify-content-center">
+          <button class="bg-dark text-white" (click)="checkOut()">Place Order</button>
+        </div>
       </div>
   </div>
+</div>
 </div>

@@ -14,6 +14,7 @@ import {ProductsService} from './products.service';
 import {HttpClientModule} from '@angular/common/http';
 import { LogoutComponent } from './logout/logout.component';
 import {FormsModule} from '@angular/forms';
+import { OrderHistoryComponent } from './order-history/order-history.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {FormsModule} from '@angular/forms';
     SignupComponent,
     LoginComponent,
     LogoutComponent,
+    OrderHistoryComponent,
   ],
   imports: [
     BrowserModule,

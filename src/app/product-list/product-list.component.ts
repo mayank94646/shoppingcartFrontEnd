@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {ProductsService} from '../products.service';
+import {CartService} from '../cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -9,11 +10,12 @@ import {ProductsService} from '../products.service';
 })
 export class ProductListComponent implements OnInit {
 
-  constructor(private productService: ProductsService, private router: Router, private route: ActivatedRoute) { }
+  // tslint:disable-next-line:max-line-length
+  constructor(private productService: ProductsService, private router: Router, private route: ActivatedRoute, private cartService: CartService) { }
 
   public products;
   private category;
-
+  private productId;
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -38,5 +40,10 @@ export class ProductListComponent implements OnInit {
     } else {
       this.productService.getProductsOfCategoryAndPrice(this.category, price1, price2).subscribe(data => this.products = data);
     }
+  }
+  addThisProductToCart(product) {
+    this.cartService.addToCart(product.productId).subscribe((data) =>
+      console.log(data));
+    alert('Product added to cart.');
   }
 }

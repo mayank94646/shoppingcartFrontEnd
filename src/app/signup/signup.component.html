@@ -4,23 +4,25 @@
       <div id="login-row" class="row justify-content-center align-items-center">
         <div id="login-column" class="col-md-6 imp">
           <div id="login-box" class="col-md-12 ">
-            <form id="login-form" class="form" action="" method="post">
+            <form id="login-form" class="was-validated" action="login">
               <h1 class="text-center">Sign up</h1>
               <div class="form-group">
                 <label for="username" >Name:</label><br>
-                <input type="text" name="username" id="username" class="form-control" [(ngModel)]="user.name">
+                <input type="text" name="username" id="username" class="form-control"  [(ngModel)]="user.name" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
               </div>
               <div class="form-group">
                 <label for="mail" >Email:</label><br>
-                <input type="text" name="mail" id="mail" class="form-control" [(ngModel)]="user.email">
+                <input type="text" name="mail" id="mail" class="form-control" [(ngModel)]="user.email" required>
               </div>
               <div class="form-group">
                 <label for="number">Contact Number:</label><br>
-                <input type="text" name="number" id="number" class="form-control" [(ngModel)]="user.mobileNo">
+                <input type="text" name="number" id="number" class="form-control" [(ngModel)]="user.mobileNo" required>
               </div>
               <div class="form-group">
                 <label for="password">Password:</label><br>
-                <input type="password" name="password" id="password" class="form-control" [(ngModel)]="user.password">
+                <input type="password" name="password" id="password" class="form-control" [(ngModel)]="user.password" required>
               </div>
               <div>Gender:</div>
               <div class="form-group">
@@ -42,7 +44,7 @@
               </div>
               <div class="form-group">
                 <br>
-                <input type="submit" name="submit" class="btn border-white text-white" value="Register" (click)="createUser()">
+                <button type="submit"  class="btn border-white text-white" value="Register" (click)="createUser()"></button>
               </div>
             </form>
           </div>

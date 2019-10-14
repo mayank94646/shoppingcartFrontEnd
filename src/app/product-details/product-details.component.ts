@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {ProductsService} from '../products.service';
+import {CartService} from '../cart.service';
 
 @Component({
   selector: 'app-product-details',
@@ -11,7 +12,8 @@ export class ProductDetailsComponent implements OnInit {
   private productId;
   private products = [];
   private product;
-  constructor(private route: ActivatedRoute, private router: Router, private productService: ProductsService) { }
+  // tslint:disable-next-line:max-line-length
+  constructor(private route: ActivatedRoute, private router: Router, private productService: ProductsService, private cartService: CartService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -23,9 +25,9 @@ export class ProductDetailsComponent implements OnInit {
     this.productService.getOneProduct(this.productId).subscribe(data => this.product = data);
   }
 
-  /*addThisProductToCart(id) {
+  addThisProductToCart(id) {
     this.cartService.addToCart(id).subscribe((data) =>
       console.log(data));
     alert('Product added to cart.');
-  }*/
+  }
 }
