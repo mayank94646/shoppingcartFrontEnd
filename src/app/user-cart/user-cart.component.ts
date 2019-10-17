@@ -38,6 +38,9 @@ export class UserCartComponent implements OnInit {
       });
     });
   }
+  navTOProductDetail(productId: any) {
+    this.router.navigate(['productdetail' , productId ]);
+  }
   addOne(id: any) {
     console.log(id);
     this.cart.addToCart(id).subscribe(data1 => {
@@ -64,10 +67,6 @@ export class UserCartComponent implements OnInit {
         this.total = total;
       });
     });
-  }
-
-  navTOProductDetail(productId: any) {
-    this.router.navigate(['productdetail' , productId ]);
   }
   checkOut() {
     this.router.navigate(['orderHistory']);

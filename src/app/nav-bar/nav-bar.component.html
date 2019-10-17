@@ -1,35 +1,56 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-between">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-between border-bottom pt-0 pb-0">
+  <div>
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a class="nav-link pl-4" ><h1 class="topic">ShOpMaNiA</h1></a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <h3 *ngIf="!loginService.isUserLoggedIn()"><a class="nav-link pl-4" routerLink="/login" routerLinkActive="color">Login</a></h3>
+      </li>
+      <li class="nav-item ">
+        <h3 *ngIf="loginService.isUserLoggedIn()"><a class="nav-link pl-4" routerLink="/orderHistory">My Orders</a></h3>
+      </li>
+      <li class="nav-item ">
+        <h3 *ngIf="loginService.isUserLoggedIn()"><a class="nav-link pl-4" href="cart">My Cart</a></h3>
+      </li>
+      <li class="nav-item ">
+        <h3 *ngIf="loginService.isUserLoggedIn()"><a class="nav-link pl-4" routerLink="/logout">Logout</a></h3>
+      </li>
+
+      <li class="nav-item ">
+        <h3 *ngIf="loginService.isUserLoggedIn()"><a class="nav-link pl-4" routerLink="/myAccount">My Account</a></h3>
+      </li>
+    </ul>
+  </div>
+
+
+</nav>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
   <div>
   <ul class="navbar-nav">
     <li class="nav-item ">
-      <a class="nav-link pl-4" routerLink="home" routerLinkActive="color"><h3>Home</h3></a>
+      <a class="nav-link pl-4" routerLink="home" routerLinkActive="color"><h2>Home</h2></a>
     </li>
     <li class="nav-item ">
-      <h3><a class="nav-link pl-4" routerLink="/products/all" routerLinkActive="color">All Products</a></h3>
+      <h2><a class="nav-link pl-4" routerLink="/products/all" routerLinkActive="color">All Products</a></h2>
     </li>
     <li class="nav-item pl-4">
-      <h3><a class="nav-link" routerLink="/products/electronics" routerLinkActive="color">Electronics</a></h3>
+      <h2><a class="nav-link" routerLink="/products/electronics" routerLinkActive="color">Electronics</a></h2>
     </li>
     <li class="nav-item pl-4">
-      <h3><a class="nav-link" routerLink="/products/books" routerLinkActive="color">Books</a></h3>
+      <h2><a class="nav-link" routerLink="/products/books" routerLinkActive="color">Books</a></h2>
     </li>
     <li class="nav-item pl-4">
-      <h3><a class="nav-link" routerLink="/products/footwear" routerLinkActive="color">Sports</a></h3>
+      <h2><a class="nav-link" routerLink="/products/footwear" routerLinkActive="color">Sports</a></h2>
     </li>
     <li class="nav-item pl-4">
-      <h3><a class="nav-link" routerLink="/products/clothing">Clothing</a></h3>
+      <h2><a class="nav-link" routerLink="/products/clothing">Clothing</a></h2>
     </li>
   </ul>
   </div>
-<div class="p-0 m-0 d-flex justify-content-center">
-    <h3 *ngIf="!loginService.isUserLoggedIn()"><a class="nav-link text-white" routerLink="/login" routerLinkActive="color">Login</a></h3>
-
-    <h3 *ngIf="loginService.isUserLoggedIn()"><a class="nav-link text-white" routerLink="/logout">Logout</a></h3>
-
-  <a class="nav-link" href="cart"><h3 class="text-white">My Cart</h3></a>
-  <a class="nav-link" routerLink="/orderHistory"><h3 class="text-white">order history</h3></a>
-
-</div>
 
 </nav>
-

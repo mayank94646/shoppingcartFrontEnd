@@ -28,8 +28,10 @@ export class ProductListComponent implements OnInit {
       }
     });
   }
-  seeDetails(product) {
-    this.router.navigate(['product-detail', product.productId]);
+  addThisProductToCart(product) {
+    this.cartService.addToCart(product.productId).subscribe((data) =>
+      console.log(data));
+    alert('Product added to cart.');
   }
   goTo(category) {
     this.router.navigate(['products', category]);
@@ -41,9 +43,7 @@ export class ProductListComponent implements OnInit {
       this.productService.getProductsOfCategoryAndPrice(this.category, price1, price2).subscribe(data => this.products = data);
     }
   }
-  addThisProductToCart(product) {
-    this.cartService.addToCart(product.productId).subscribe((data) =>
-      console.log(data));
-    alert('Product added to cart.');
+  seeDetails(product) {
+    this.router.navigate(['product-detail', product.productId]);
   }
 }

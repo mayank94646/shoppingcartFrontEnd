@@ -10,7 +10,8 @@ import {Users} from '../Users';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private register: RegistrationService, private router: Router ) { }
+  constructor(private register: RegistrationService, private router: Router) {
+  }
 
 // tslint:disable-next-line:new-parens
   private user: Users = new class implements Users {
@@ -26,12 +27,12 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
   }
+
   createUser() {
-    this.register.createUser(this.user).subscribe(data => {
-      alert('User created successfully.');
-      this.router.navigate(['login']);
-    });
-  }
-
-
+    // tslint:disable-next-line:no-unused-expression
+        this.register.createUser(this.user).subscribe(data => {
+          alert('User created successfully.');
+          this.router.navigate(['login']);
+        });
+      }
 }

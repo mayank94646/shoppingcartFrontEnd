@@ -1,25 +1,24 @@
-<div class="container">
-
-  <h1 class="font1 my-3 text-center">Order History</h1>
-  <table class="table table-hover text-center text-black-50">
+<div class="container-fluid  env">
+  <h1 class="text-center text-white p-2">Order History</h1>
+  <table class="table table-hover  text-center table-dark table-striped">
     <thead>
-    <tr>
-      <th>Product Image</th>
-      <th>Product Name</th>
-      <th>Product Quantity</th>
-      <th>Product Price</th>
-      <th>Date</th>
-      <th>See Details</th>
+    <tr class="size">
+      <th><h2>Image</h2></th>
+      <th><h2>Name</h2></th>
+      <th><h2>Price</h2></th>
+      <th><h2>Order Date</h2></th>
+      <th><h2>Quantity</h2></th>
+      <th><h2>Details</h2></th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let history of OrderHistory">
-      <td><img src="{{history.image}}" height="120px" width="130px"></td>
-      <td>{{history.name}}</td>
-      <td>{{history.quantity}}</td>
-      <td>{{history.price}}</td>
-      <td>{{history.date}}</td>
-      <td><button class="btn btn-success" (click)="checkDetails(history.productId)">See Details</button></td>
+    <tr *ngFor="let pro of product">
+      <td><img class="border border-dark" src="{{pro.image}}" height="160px" width="170px"></td>
+      <td><h4>{{pro.name}}</h4></td>
+      <td><h4>{{pro.price}}</h4></td>
+      <td><h4>{{pro.date}}</h4></td>
+      <td><h4>{{pro.quantity}}</h4></td>
+      <td><button class="btn btn-dark text-white" (click)="checkDetails(pro.productId)"><h4>Watch Details</h4></button></td>
     </tr>
     </tbody>
   </table>

@@ -9,6 +9,7 @@ import {ProductListComponent} from './product-list/product-list.component';
 import {LogoutComponent} from './logout/logout.component';
 import {AuthguardService} from './authguard.service';
 import {OrderHistoryComponent} from './order-history/order-history.component';
+import {MyaccountComponent} from './myaccount/myaccount.component';
 
 
 export const MAIN_ROUTES: Routes = [
@@ -17,6 +18,7 @@ export const MAIN_ROUTES: Routes = [
   { path : 'sign_up', component: SignupComponent },
   { path : 'login', component: LoginComponent },
   { path : 'orderHistory', component: OrderHistoryComponent },
+  { path : 'myAccount', component: MyaccountComponent },
   { path : 'logout', component: LogoutComponent, canActivate: [AuthguardService]},
   { path : 'cart', component: UserCartComponent, canActivate: [AuthguardService]},
   { path : 'products/:category', component: ProductListComponent },

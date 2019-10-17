@@ -15,14 +15,20 @@
               <div class="form-group">
                 <label for="mail" >Email:</label><br>
                 <input type="text" name="mail" id="mail" class="form-control" [(ngModel)]="user.email" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
               </div>
               <div class="form-group">
                 <label for="number">Contact Number:</label><br>
                 <input type="text" name="number" id="number" class="form-control" [(ngModel)]="user.mobileNo" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
               </div>
               <div class="form-group">
                 <label for="password">Password:</label><br>
                 <input type="password" name="password" id="password" class="form-control" [(ngModel)]="user.password" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
               </div>
               <div>Gender:</div>
               <div class="form-group">
@@ -44,7 +50,7 @@
               </div>
               <div class="form-group">
                 <br>
-                <button type="submit"  class="btn border-white text-white" value="Register" (click)="createUser()"></button>
+                <button type="submit"  class="btn border-white text-white" value="Register" (click)="createUser()">Register</button>
               </div>
             </form>
           </div>

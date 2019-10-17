@@ -9,11 +9,11 @@ import {Router} from '@angular/router';
 })
 export class OrderHistoryComponent implements OnInit {
 
-  private OrderHistory;
+  private product;
   constructor(private cartService: CartService, private router: Router) { }
 
   ngOnInit() {
-    this.cartService.showOrderHistory().subscribe(data => this.OrderHistory = data);
+    this.cartService.showOrderHistory().subscribe(data => this.product = data);
   }
 
   checkDetails(id) {
